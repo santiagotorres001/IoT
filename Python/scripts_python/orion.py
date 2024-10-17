@@ -14,6 +14,7 @@ def get_data(opcion):
         res = requests.get(url)
         res.raise_for_status()
         data = res.json()['bodies']
+        
 
         if opcion == 1: 
             filtered_data = [body for body in data if 'Planet' in body.get('bodyType', '')]
